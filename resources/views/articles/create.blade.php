@@ -7,6 +7,15 @@
     <title>create</title>
 </head>
 <body>
+{{-- 一覧画面でフラッシュメッセージを表示 --}}
+    @if (!empty($errors))
+        <div class="error">
+            @foreach($errors->all() as $error)
+                {{ $error }}
+            @endforeach
+        </div>
+    @endif
+
     {{-- フォームの送信先はstoreアクション --}}
     <form action="{{ route('articles.store') }}" method="post">
         @csrf

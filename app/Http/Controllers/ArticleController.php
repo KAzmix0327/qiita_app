@@ -17,9 +17,11 @@ class ArticleController extends Controller
     {
         $method = 'GET';
         $tag_id = 'PHP';
+        $per_page = 30;
 
         // QIITA_URLの値を一覧を取得してURLを定義
-        $url = config('qiita.url') . '/api/v2/tags/' . $tag_id . '/items';
+        //30件取得　$tag_idの後に記述
+        $url = config('qiita.url') . '/api/v2/tags/' . $tag_id . '/items?per_page=' . $per_page;
 
         // $optionsにBearerトークンを指定
         $options = [

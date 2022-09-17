@@ -29,6 +29,22 @@
             @endforeach
         </ul>
     @endif
+    {{-- 自分の記事投稿 --}}
+    <hr>
+    <h1>自分の記事一覧</h1>
+    @if (!empty($my_articles))
+        <ul>
+            @foreach ($my_articles as $article)
+                <li>
+                    {{-- <a href="/articles/{{ $articles->id }}"> --}} 
+                    <a href="{{ route('articles.show',$article->id) }}"> 
+                    {{ $article->title }}
+                    </a>
+                </li>
+            @endforeach
+        </ul>
+    @endif
+
     {{-- 投稿記事ボタン作成 --}}
     <button type="button" onclick="location.href='{{ route('articles.create') }}'">記事投稿</button>
 </body>

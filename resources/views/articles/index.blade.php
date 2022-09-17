@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>index</title>
 </head>
 
 <body>
@@ -17,11 +17,12 @@
                     {{-- <a href="/articles/{{ $articles->id }}"> --}} 
                     <a href="{{ route('articles.show',$article->id) }}"> 
                     {{ $article->title }}
+                    </a>
                 </li>
             @endforeach
         </ul>
     @endif
-    <button type="button" onclick='location.href='{{ route('articles.create') }}'">記事投稿</button>
+    <button type="button" onclick="location.href='{{ route('articles.create') }}'">記事投稿</button>
 </body>
 
 </html>
